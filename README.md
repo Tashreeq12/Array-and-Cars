@@ -23,5 +23,97 @@ public class SumOfArrayElements {
     System.out.println("Telsa Model S");
     
     }
+
+
     
 }
+
+public class Car {
+
+    String brand ;
+    String model;
+   
+   
+    // Constructor to initiliaze brand and model
+    public Car(String brand,String model)
+    {
+        this.brand = brand;
+        this.model = model;
+       
+    }
+   
+    // Getter for brand
+    public String getBrand() {
+        return brand ;
+    }
+
+   
+   
+    // Setter for brand
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+   
+   
+    //Getter for model
+    public String getModel(){
+        return model;
+    }
+   
+    //Setter for model
+    public void setModel(String model){
+        this.model = model;
+    }
+ 
+   
+    //Method to display brand and model of the car
+    public void displayDetails(){
+        System.out.println("Car brand:" + brand);
+        System.out.println("Car model:" + model);
+       
+       
+    
+        }
+       
+    } 
+
+
+
+
+    class ElectricCar extends Car {
+    
+    
+    private double batteryCapacity; // in KWh
+   
+    //Constructor to initialize brand, model and battery capacity
+    public ElectricCar(String brand, String model, double batteryCapacity){
+        super(brand, model);
+        this.batteryCapacity = batteryCapacity;
+    }
+   
+    // Overriding displayDetails() method to include battery capacity
+    @Override
+   
+    public void displayDetails(){
+        super.displayDetails();
+        System.out.println("Battery Capacity: " + batteryCapacity + " kWh");
+    }
+   
+    //Main method for testing
+    public static void main(String[] args) {
+        // Create an ElectricCar object
+        ElectricCar myElectricCar = new ElectricCar("Telsa", "Model S", 120);
+       
+        // Display details of the electric car
+        System.out.println("Details of the electric Car: ");
+        myElectricCar.displayDetails();
+       
+    }
+       
+       
+    }
+    
+
+
+
+
